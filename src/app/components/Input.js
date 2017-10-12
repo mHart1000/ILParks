@@ -10,7 +10,7 @@ class Parks extends React.Component{
 		var parks = this.state.parks;
 		parks = parks.map(function(park, index){
 			return(
-				<Link to={`/park-display/${park.obj.name}`} key={index}>
+				<Link to={`/park-display/${park.obj.name}`} params={{singleId: 1}} key={index}>
 					<li>
 						<span className="name">{park.obj.name}</span>
 						<span className="dist">{Math.floor(park.dis / 1000)} km</span>
@@ -45,7 +45,6 @@ class Parks extends React.Component{
 			console.log(json);
 		}).catch(function(x) {
 			console.log(x)
-			console.warn(x.responseText)
 		})
 	}
 };

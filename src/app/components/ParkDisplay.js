@@ -6,7 +6,8 @@ class ParkDisplay extends React.Component{
 	}
 	
 	componentDidMount() {
-		let name = window.location.href.split("/").pop()
+		let name = this.props.location.pathname.split("/").pop()
+		console.log(name)
 		fetch('../api/parks/' + name).then(data => {
 			return data.json();
 		}).then( json => {
